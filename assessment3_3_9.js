@@ -4,3 +4,4 @@ Create an interactive program which allows a user to enter in the average temper
 for (7) days. When the user has finished entering data, calculate the average temperature 
 for the week and display the result.
 */
+console.log("Unfortunatley, there's nothing to see here");
