@@ -12,16 +12,37 @@ number of points for each action, and the final score should be displayed when t
 */
 var sget=require('sget');
 var animal=['Lion', 'Bear', 'Monkey', 'Flamingo'];
+var keepersAnimal=animal[Math.floor(Math.random() * animal.length)]
 
 start();
 
 function start(){
 	console.log("Welcome to ZooKeeper!");
-	var keeper= sget('Please enter your name.');
-	playGame();
+	assignAnimal();
 }
-function playGame(start){
-	console.log(keeper + "You have been assigned a " + animal + ".");
+function assignAnimal(){
+	var keeper= sget("Please enter your name.");
+	console.log(keeper + "You have been assigned a " + keepersAnimal + ".");
+	var namedAnimal=sget("Please enter your " + keepersAnimal + "'s name.");
+	keeperChoice();
+}
+function keeperChoice(namedAnimal){
+	console.log("What would you like to do with " + namedAnimal + "today? \n1. Feed" + namedAnimal+ "? \n2. Wash" + namedAnimal+ "?\n3. Groom" + namedAnimal+ "?\n4. Pet" + namedAnimal+ "?");
+	switch(namedAnimal){
+		case "1":
+		console.log(namedAnimal + " has been fed!");
+		break;
 
-	startGame();
+		case "2":
+		console.log(namedAnimal + " has been washed!");
+		break;
+
+		case "3":
+		console.log(namedAnimal + " has been groomed!");
+		break;
+
+		case "4":
+		console.log(namedAnimal + " has been petted!");
+		break;
+	}
 }
