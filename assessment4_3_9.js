@@ -10,3 +10,18 @@ The game should continue until the user chooses to quit.
 BONUS: Implement a scoring system. The user should gain or lose a random 
 number of points for each action, and the final score should be displayed when the user quits.
 */
+var sget=require('sget');
+var animal=['Lion', 'Bear', 'Monkey', 'Flamingo'];
+
+start();
+
+function start(){
+	console.log("Welcome to ZooKeeper!");
+	var keeper= sget('Please enter your name.');
+	playGame();
+}
+function playGame(start){
+	console.log(keeper + "You have been assigned a " + animal + ".");
+
+	startGame();
+}

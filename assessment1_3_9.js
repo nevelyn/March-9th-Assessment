@@ -11,7 +11,7 @@ var num2=Number(sget("Please enter your second number"));
 var num3=Number(sget("Please enter your third number"));
 
 function start(){
-	console.log("Welcome! You will enter 3 numbers which will be displayed from largest to smallest")
+	console.log("Welcome! You will enter 3 numbers which will be displayed from largest to smallest");
 
 }
 
