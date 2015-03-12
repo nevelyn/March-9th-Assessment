@@ -15,34 +15,52 @@ var animal=['Lion', 'Bear', 'Monkey', 'Flamingo'];
 var keepersAnimal=animal[Math.floor(Math.random() * animal.length)]
 
 start();
+var namedAnimal=sget("Please enter your " + keepersAnimal + "'s name.").trim();
+keeperChoice();
 
 function start(){
 	console.log("Welcome to ZooKeeper!");
 	assignAnimal();
 }
 function assignAnimal(){
-	var keeper= sget("Please enter your name.");
-	console.log(keeper + "You have been assigned a " + keepersAnimal + ".");
-	var namedAnimal=sget("Please enter your " + keepersAnimal + "'s name.");
-	keeperChoice();
+	var keeper= sget("Please enter your name.").trim();
+	console.log("Hi " + keeper + " you have been assigned a " + keepersAnimal + ".");
 }
-function keeperChoice(namedAnimal){
-	console.log("What would you like to do with " + namedAnimal + "today? \n1. Feed" + namedAnimal+ "? \n2. Wash" + namedAnimal+ "?\n3. Groom" + namedAnimal+ "?\n4. Pet" + namedAnimal+ "?");
-	switch(namedAnimal){
+function endGame(keeper){
+	console.log("Congratulations " + keeper + " you've spent some quality time with your " + keepersAnimal + " " + namedAnimal + ".");
+	}
+
+function keeperChoice(){
+	var activity=sget("What would you like to do with " + namedAnimal + "\n1. Feed " + namedAnimal+ "? \n2. Wash " + namedAnimal+ "?\n3. Groom " + namedAnimal+ "?\n4. Pet " + namedAnimal+ "?\n5. Quit").trim();
+	switch(activity){
 		case "1":
-		console.log(namedAnimal + " has been fed!");
-		break;
+			console.log(namedAnimal + " has been fed!");
+			keeperChoice();
+			break;
 
 		case "2":
-		console.log(namedAnimal + " has been washed!");
-		break;
+			console.log("Great job! "+ namedAnimal + " is clean as a whistle!");
+			keeperChoice();
+			break;
 
 		case "3":
-		console.log(namedAnimal + " has been groomed!");
-		break;
+			console.log("Congratulations! " + namedAnimal + " is looking like a million bucks!");
+			keeperChoice();
+			break;
 
 		case "4":
-		console.log(namedAnimal + " has been petted!");
-		break;
+			console.log(namedAnimal + " loves to be petted by you!");
+			keeperChoice();
+			break;
+
+		case "5":
+			endGame();
+			break;
+
+		default:
+			console.log("Invalid input! Please choose " + namedAnimal + " is waiting!");
+			keeperChoice();
+			break;
 	}
+
 }

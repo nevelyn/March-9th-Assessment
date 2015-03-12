@@ -9,6 +9,10 @@ var sget=require('sget');
 var num1=Number(sget("Please enter your first number"));
 var num2=Number(sget("Please enter your second number"));
 var num3=Number(sget("Please enter your third number"));
+var numArray= [num1, num2, num3];
+var sortedNums=(numArray.sort(function(a,b){
+		return b-a
+	}));
 
 function start(){
 	console.log("Welcome! You will enter 3 numbers which will be displayed from largest to smallest");
@@ -16,6 +20,6 @@ function start(){
 }
 
 function compareNumbers(){
-	console.log(Math.max(num1,num2,num3));
+	console.log("Here are your sorted numbers " + sortedNums);
 }
 compareNumbers();
